@@ -43,6 +43,7 @@ public class CardTrick {
 //                magicHand[iHand].getSuit());  //#endregion display hand
         }   //#endregion draw the hand
 
+        /* Removed:
         //#region User Pick a Card 
         while(!sCertain.equals("Yes")) {    //loops back here if user changes mind
             System.out.printf("%n%s%n%s",   //asks for / stores user's guess (suit)
@@ -59,6 +60,15 @@ public class CardTrick {
                 userInput[1], userInput[0]);    //displays users guess, allows for a re-guess before checking hand
             sCertain = get.nextLine();  //note: no error checking. "ace" will always return a wrong answer (lack of capitalization)
         }
+        */
+
+        //#region Lucky Card Generation
+        Card LuckyCard = new Card;  //original program didn't rely on user's input being committed to an object
+        LuckyCard.suit = "Clubs";   //sets the suit of the lucky card manually
+        LuckyCard.sValue = "6";     //sets the value of the card manually
+        userInput[0] = LuckyCard.suit;  //translates the suit into userinput to prevent further code needing to change
+        userInput[1] = LuckyCard.sValue;//as above for value; this is not up to normal par but instead a 2-minute fix that satisfies the purpose of the exercise
+        //#endregion Lucky Card Generation
 
         //#region check guess
         for(int iHand = 0; iHand < magicHand.length; iHand++) { //cycles through hand to see if guess matches a card
