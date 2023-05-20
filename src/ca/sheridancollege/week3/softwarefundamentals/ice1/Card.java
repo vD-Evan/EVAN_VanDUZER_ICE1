@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * CLASS NAME
+ * ICE 1
+ * @author Evan VanDuzer
+ * VanDuzeE
+ * 991471855
  */
+
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
 
 /**
@@ -12,42 +15,45 @@ package ca.sheridancollege.week3.softwarefundamentals.ice1;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
- * @author dancye
+ * @author dancye // Evan
  */
+
+import java.lang.Math;
+
 public class Card {
-
-   private String suit; //clubs, spades, diamonds, hearts
-   private int value;//1-13
-
-   public static final String [] SUITS = {"Heartt", "Diamonds", "Spades", "Clubs"};
-    /**
-     * @return the suit
-     */
-    public String getSuit() {
+    private String suit; //clubs, spades, diamonds, hearts
+    private int value;//1-13
+    private double dTemp;   //stores a temporary random number in a double
+    private int iTemp;  //converts temp double to an integer
+    private String sValue;  //holds card value in a more readable (user-friendly) string variable
+ 
+    //readable labels for suits and values rather than integers
+    public static final String [] SUITS = {"Clubs", "Spades", "Diamonds", "Hearts"};
+    public static final String [] VALUES = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+ 
+    public String getSuit() {  //gets the suit
         return suit;
     }
-
-    /**
-     * @param suit the suit to set
-     */
-    public void setSuit(String suit) {
-        this.suit = suit;
+    public void setSuit() {    //randomizes the suit and stores it
+        dTemp = Math.random() * 4; //these three lines could be changed to a single one without the need of iTemp and dTemp
+        iTemp = (int) dTemp;   //no points for efficiency given and this is easier to read / understand
+        this.suit = SUITS[iTemp];  //as well as test for errors
     }
 
-    /**
-     * @return the value
-     */
-    public int getValue() {
+    public int getValue() {    //gets the value of the card
         return value;
     }
-
-    /**
-     * @param value the value to set
-     */
-    public void setValue(int value) {
-        this.value = value;
+    public void setValue() {   //randomizes the value and stores it
+        dTemp = Math.random() * 13;    //see above for comments
+        iTemp = (int) dTemp;
+        this.value = iTemp;
     }
-   
-   
-    
+
+    public String getValueString() {    //gets the value of the string
+        setValueString();               // (in a readable format)
+        return this.sValue;
+    }
+    public void setValueString() {  //converts the integer value of card to string
+        this.sValue = VALUES[value];
+    }
 }
