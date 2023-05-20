@@ -1,9 +1,10 @@
-/**
- * CLASS NAME
- * ICE 1
- * @author Evan VanDuzer
- * VanDuzeE
- * 991471855
+/*           Class: SYST 17796 - Fundamentals of Software Design and Development
+ *      Assignment: ICE 1
+ *     Author Name: Evan VanDuzer
+ *     Sheridan ID: VanDuzeE
+ * Sturdent Number: 991471855
+ * 
+ * @author VD-Evan
  */
 
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
